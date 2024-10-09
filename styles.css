@@ -1,0 +1,264 @@
+@font-face {
+    font-family: Satoshi;
+    src: url(./assets/Satoshi_Complete/Satoshi_Complete/Fonts/Variable/Satoshi-Variable.ttf);
+}
+@font-face {
+    font-family: Futura;
+    src: url();
+}
+
+html, body {
+    /* border: 2px solid black; */
+    padding: 0 !important;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+html {
+    overflow: hidden;
+}
+body {
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+    background: linear-gradient(180deg, rgba(231, 173, 222, 0.829), white);
+}
+header {
+    /* width: 100%; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 2px 9px 1px rgba(0, 0, 0, 0.12), 0 4px 2px -2px rgba(0, 0, 0, 0.2);
+    /* position: fixed; */
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    padding: 0px 20px 0px 20px;
+    /* border: 1px solid black; */
+    color: white;
+    font-size: 12px;
+    background-color: rgba(160, 9, 135, 0.829);
+    transition: transform 0.233s cubic-bezier(0, 0, 0.21, 1) 0.1s;
+    z-index: 1000;
+}
+.h1-div {
+    width: 50%;
+}
+.h1-div h1 {
+    margin-right: 20px;
+    font-family: sans-serif;
+    font-weight: 500;
+}
+.button-div {
+    display: flex;
+    justify-content: right;
+    width: 50%;
+}
+.button-div button {
+    /* border: 2px solid black; */
+    margin-left: 10px;
+    /* border-radius: 50%; */
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+    background-color: inherit;
+    opacity: 0.54;
+    transition: opacity 0.333s cubic-bezier(0, 0, 0.21, 1);
+}
+.button-div button i {
+    font-size: 17.5px;
+}
+.loader {
+    left: 50%;
+    top: 50%;
+    position: fixed;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.loader #spinner {
+    box-sizing: border-box;
+    stroke: black;
+    stroke-width: 3px;
+    -webkit-transform-origin: 50%;
+    transform-origin: 50%;
+    -webkit-animation: line 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite, rotate 1.6s linear infinite;
+    animation: line 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite, rotate 1.6s linear infinite;
+}
+@-webkit-keyframes rotate {
+    from {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+    to {
+        -webkit-transform: rotate(450deg);
+        transform: rotate(450deg);
+    }
+}
+@keyframes rotate {
+    from {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+    to {
+        -webkit-transform: rotate(450deg);
+        transform: rotate(450deg);
+    }
+}
+@-webkit-keyframes line {
+    0% {
+        stroke-dasharray: 2, 85.964;
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+    50% {
+        stroke-dasharray: 65.973, 21.9911;
+        stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dasharray: 2, 85.964;
+        stroke-dashoffset: -65.973;
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+}
+@keyframes line {
+    0% {
+        stroke-dasharray: 2, 85.964;
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+    50% {
+        stroke-dasharray: 65.973, 21.9911;
+        stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dasharray: 2, 85.964;
+        stroke-dashoffset: -65.973;
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+}
+.main {
+    padding-top: 35px;
+    flex: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.dialog-container {
+    width: 100%;
+    background: rgb(78, 76, 76);
+    position: relative;
+    /* bottom: 0; */
+    /* opacity: 0; */
+    /* pointer-events: none; */
+    will-change: opacity;
+    transition: opacity 0.333s cubic-bezier(0, 0, 0.21, 1); 
+}
+.dialog-container--visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+.dialog {
+    /* background: white; */
+    border-radius: 2px;
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.24), 0 14px 28px rgba(0, 0, 0, 0.48);
+    padding: 18px 18px 18px 18px;
+}
+.card {
+    padding: 16px;
+    margin: 16px;
+    position: relative;
+    box-sizing: border-box;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+.card .location {
+    font-size: 1.75em;
+}
+.card .date, .card .description {
+    font-size: 1.0em;
+}
+.card .current {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+/* .card .current .icon {
+} */
+.card .current .visual {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 4em;
+}
+.card .current .visual .scale {
+    font-size: 0.5em;  
+    vertical-align: super;
+}
+.card .current .visual, .card .current .description {
+    flex: 1;
+}
+.card .current .feels-like::before {
+    content: "Feels like: ";
+    color: #888;
+}
+.card .current .precipitation::before {
+    content: "Precipitation: ";
+    color: #888;
+}
+.card .current .humidity::before {
+    content: "Humidity: ";
+    color: #888;;
+}
+.card .current .wind::before {
+    content: "Wind: ";
+    color: #888;
+}
+/* .card .current .pollen:before {
+    content: "Pollen Count: ";
+}
+.card .current .pcount::before {
+    content: "Pollen ";
+} */
+ .card .future {
+    display: flex;
+ }
+ .card .future .oneday {
+    flex-grow: 1;
+    text-align: center;
+ } 
+ .card .future .oneday .icon {
+    width: 64px;
+    height: 64px;
+    margin-left: auto;
+    margin-right: auto;
+ }
+ .card .future .oneday .temp-high, .card .future .oneday .temp-low {
+    display: inline-block;
+ }
+ .card .future .oneday .temp-low {
+    color: #888;
+ }
+ 
+/* RESPONSIVE DESIGN */
+@media (max-width: 450px) {
+    .card .date, .card .description {
+        font-size: 0.9em;
+    }
+    .card .current .icon {
+        width: 96px;
+        height: 96px;
+    }
+    .ca
