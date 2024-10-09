@@ -4,7 +4,19 @@
 }
 @font-face {
     font-family: Futura;
-    src: url();
+    src: url(./assets/futura/futura\ medium\ bt.ttf);
+}
+@font-face {
+    font-family: Source Sans Pro;
+    src: url(./assets/Source_Sans_3/SourceSans3-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: Inter;
+    src: url(./assets/Inter/Inter-VariableFont_slnt\,wght.ttf);
+}
+@font-face {
+    font-family: Freestyle Script;
+    src: url(./assets/freestyle-script/FREESCPT.TTF);
 }
 
 html, body {
@@ -42,7 +54,7 @@ header {
     padding: 0px 20px 0px 20px;
     /* border: 1px solid black; */
     color: white;
-    font-size: 12px;
+    font-size: 10px;
     background-color: rgba(160, 9, 135, 0.829);
     transition: transform 0.233s cubic-bezier(0, 0, 0.21, 1) 0.1s;
     z-index: 1000;
@@ -51,9 +63,9 @@ header {
     width: 50%;
 }
 .h1-div h1 {
-    margin-right: 20px;
-    font-family: sans-serif;
+    margin-right: 10px;
     font-weight: 500;
+    font-family: "Satoshi";
 }
 .button-div {
     display: flex;
@@ -155,8 +167,9 @@ header {
 }
 .dialog-container {
     width: 100%;
-    background: rgb(78, 76, 76);
+    background: rgb(36, 32, 32);
     position: relative;
+    font-weight: 400;
     /* bottom: 0; */
     /* opacity: 0; */
     /* pointer-events: none; */
@@ -173,20 +186,49 @@ header {
     box-shadow: 0 0 14px rgba(0, 0, 0, 0.24), 0 14px 28px rgba(0, 0, 0, 0.48);
     padding: 18px 18px 18px 18px;
 }
+.dialog-title {
+    font-family: "Satoshi";
+    margin-bottom: 6px;
+    color: rgb(139, 137, 137);
+    font-size: 0.8em;
+}
+.dialog-body select {
+    font-family: "Satoshi";
+    margin-bottom: 10px;
+    padding: 5px 8px 5px 8px;
+    font-size: 0.85em;
+    border-radius: 7px;
+}
+.dialog-buttons .button {
+    padding: 8px 14px 8px 14px;
+    border-radius: 15px;
+    font-weight: 700;
+    color: white;
+    background: rgba(160, 9, 135, 0.829);
+    border: none;
+    font-size: 0.8em;
+    font-family: "Satoshi";
+}
+.dialog-buttons button:nth-child(1) {
+    margin-right: 6px;
+}
 .card {
     padding: 16px;
     margin: 16px;
+    font-family: "Inter";
     position: relative;
     box-sizing: border-box;
     background: white;
     border-radius: 8px;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    /* box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); */
 }
 .card .location {
-    font-size: 1.75em;
+    font-size: 1.05em;
+    margin-bottom: 7px;
+    font-weight: 500;
 }
 .card .date, .card .description {
-    font-size: 1.0em;
+    font-size: 0.8em;
 }
 .card .current {
     display: -webkit-box;
@@ -210,17 +252,29 @@ header {
 .card .current .visual, .card .current .description {
     flex: 1;
 }
+.card .current .feels-like {
+    margin-bottom: 5px;
+}
 .card .current .feels-like::before {
     content: "Feels like: ";
     color: #888;
+}
+.card .current .precipitation {
+    margin-bottom: 5px;
 }
 .card .current .precipitation::before {
     content: "Precipitation: ";
     color: #888;
 }
+.card .current .humidity {
+    margin-bottom: 5px;
+}
 .card .current .humidity::before {
     content: "Humidity: ";
     color: #888;;
+}
+.card .current .wind {
+    margin-bottom: 5px;
 }
 .card .current .wind::before {
     content: "Wind: ";
@@ -261,4 +315,11 @@ header {
         width: 96px;
         height: 96px;
     }
-    .ca
+    .card .current .visual {
+        font-size: 3em;
+    }
+    .card .future .oneday .icon {
+        width: 32px;
+        height: 32px;
+    }
+}
