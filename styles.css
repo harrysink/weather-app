@@ -18,6 +18,14 @@
     font-family: Freestyle Script;
     src: url(./assets/freestyle-script/FREESCPT.TTF);
 }
+@font-face {
+    font-family: Kaige;
+    src: url(./assets/KAIGE.ttf);
+}
+@font-face {
+    font-family: Somatic;
+    src: url(./assets/Somatic-Rounded.otf);
+}
 
 html, body {
     /* border: 2px solid black; */
@@ -64,8 +72,8 @@ header {
 }
 .h1-div h1 {
     margin-right: 10px;
-    font-weight: 500;
-    font-family: "Satoshi";
+    font-weight: 100;
+    font-family: "Somatic";
 }
 .button-div {
     display: flex;
@@ -160,7 +168,7 @@ header {
     }
 }
 .main {
-    padding-top: 35px;
+    padding-top: 52px;
     flex: 1;
     overflow-x: hidden;
     overflow-y: auto;
@@ -198,6 +206,7 @@ header {
     padding: 5px 8px 5px 8px;
     font-size: 0.85em;
     border-radius: 7px;
+    cursor: pointer;
 }
 .dialog-buttons .button {
     padding: 8px 14px 8px 14px;
@@ -208,6 +217,7 @@ header {
     border: none;
     font-size: 0.8em;
     font-family: "Satoshi";
+    cursor: pointer;
 }
 .dialog-buttons button:nth-child(1) {
     margin-right: 6px;
@@ -236,14 +246,18 @@ header {
     display: -ms-flexbox;
     display: flex;
 }
-/* .card .current .icon {
-} */
+.card .current .icon {
+    width: 128px;
+    height: 128px;
+}
 .card .current .visual {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     font-size: 4em;
+    margin-right: 30px;
+    /* font-family: "Somatic"; */
 }
 .card .current .visual .scale {
     font-size: 0.5em;  
@@ -271,7 +285,7 @@ header {
 }
 .card .current .humidity::before {
     content: "Humidity: ";
-    color: #888;;
+    color: #888;
 }
 .card .current .wind {
     margin-bottom: 5px;
@@ -286,25 +300,61 @@ header {
 .card .current .pcount::before {
     content: "Pollen ";
 } */
- .card .future {
+.card .future {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
- }
- .card .future .oneday {
+}
+ .card .future .one-day {
     flex-grow: 1;
     text-align: center;
  } 
- .card .future .oneday .icon {
-    width: 64px;
-    height: 64px;
+ .card .future .one-day .icon {
+    width: 40px;
+    height: 40px;
     margin-left: auto;
     margin-right: auto;
  }
- .card .future .oneday .temp-high, .card .future .oneday .temp-low {
-    display: inline-block;
+ .card .future .one-day .temp-high, .card .future .one-day .temp-low {
+    display: block;
+    font-size: 0.8em;
  }
- .card .future .oneday .temp-low {
+ .card .future .one-day .temp-low {
     color: #888;
  }
+ .card .icon {
+    background-repeat: no-repeat;
+    background-size: contain;
+ }
+ .card .icon.clear-day {
+    background-image: url("./images/clear.png");
+ }
+ .card .icon.rain {
+    background-image: url("./images/rain.png");
+ }
+ .card .icon.snow {
+    background-image: url("./images/snow.png");
+ }
+ .card .icon.sleet {
+    background-image: url("./images/sleet.png");
+ }
+ .card .icon.wind {
+    background-image: url("./images/wind.png");
+ }
+ .card .icon.fog {
+    background-image: url("./images/fog.png");
+ }
+ .card .icon.cloudy {
+    background-image: url("./images/cloudy.png");
+ }
+ .card .icon.thunderstorms {
+    background-image: url("./images/thunderstorm.png");
+ }
+ .card .icon.partly-cloudy-day {
+    background-image: url("./images/partly-cloudy.png"); 
+}
+ 
  
 /* RESPONSIVE DESIGN */
 @media (max-width: 450px) {
